@@ -48,6 +48,10 @@ public class KaryHeap {
     * @return jth child of ith node
     */
    protected int child(int i, int j){
+       /*
+        * added j--
+        */
+       j=j-1;
        return k * i - (k-2) + j;
    }
    
@@ -98,9 +102,10 @@ public class KaryHeap {
        int j = 1;
        int smallest = index;
        
-       while(j<=k && hasjthChild(index, j++)){
+       while(j<=k && hasjthChild(index, j)){
            if(array[child(index, j)] < array[smallest])
-               smallest = array[child(index, j)];
+               smallest = child(index, j);
+           j++;
        }
        
        if(index != smallest){
@@ -133,12 +138,13 @@ public class KaryHeap {
        array[1] = array[size];
        size--;
        bubbleDown(1);
+       
        return min;
    }
    
    public void insert(int key){
        size++;
-       if(size >= array.length-1)
+       if(size > array.length-1)
            array = resize();
        
        int index = size;
