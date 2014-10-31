@@ -1,13 +1,11 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package karyheap;
 import java.util.Scanner;
 import java.io.*;
 /**
- *
- * @author thaddeuspaulfadrigalan
+ * @file KaryHeap.java
+ * @author Samantha Fadrigalan and Kayla Thurman
+ * Description: Kary Heap Implementation 
+ * Course: CSC 3102
  */
 public class KaryHeapApp {
     
