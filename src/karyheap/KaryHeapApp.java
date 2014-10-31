@@ -16,6 +16,7 @@ public class KaryHeapApp {
             heap = new KaryHeap();
             heap.setK(2);
             Scanner fin = new Scanner(new File("karyHeap-input.txt"));
+            PrintWriter fout = new PrintWriter(new File("KaryHeapOutput.txt"));
             
             while(fin.hasNext()){
                 int key;
@@ -23,10 +24,12 @@ public class KaryHeapApp {
                     key = fin.nextInt();
                     heap.insert(key);
                 }
-                else
+                else{
                     System.out.println(heap.extractMin());
+                    fout.println(heap.extractMin());
+                }
             }
-            
+            fout.close();
             fin.close();
         }
         catch(IOException e){
