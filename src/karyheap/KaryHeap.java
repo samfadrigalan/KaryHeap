@@ -4,7 +4,7 @@
  * Description: Kary Heap Implementation 
  * Course: CSC 3102
  */
-package karyheap;
+//package karyheap;
 import java.util.Arrays;
 /**
  *
